@@ -1,4 +1,10 @@
 {
-  "type": "Point",   
-  "coordinates": [-48.50, -27.50]
+	"p1": {
+		"type": "Point",
+		"coordinates": [-48.50, -27.50]
+	},
+	"p2": {
+		"type": "Point",
+		"coordinates": [-48.50, -27.50]
+	} 
 }

@@ -1,12 +1,33 @@
-VALIDAÇÃO DOS EXEMPLOS
+EXAMPLES VALIDATION
 
+* GeoJSON documents validated by tools:
 
-Documentos GeoJSON validados pelas ferramentas
 http://geojsonlint.com/
+
 https://jsonlint.com/
 
 
+* Validation of GeoJSON documents against JS4Geo was done with:
 
-
-Validação dos documentos GeoJSON contra o JS4Geo foi feita com:
 https://www.jsonschemavalidator.net/
+
+
+ATTENTION: Each example (JS4Geo/samples/) has its own scheme for validation.
+
+- Point
+
+- LineString
+
+- Polygon
+
+- MultiPoint
+
+- MultiLineString
+
+- MultiPolygon
+
+- GeometryCollection
+
+- Feature
+
+- FeatureCollection

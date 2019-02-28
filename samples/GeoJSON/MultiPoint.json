@@ -1,7 +1,16 @@
 {
-  "type": "MultiPoint",
-  "coordinates": [
-    [ -105.01, 39.57 ],
-    [ -80.66, 35.05 ]
-  ]
+	"mp01": {
+		"type": "MultiPoint",
+		"coordinates": [
+			[-105.01, 39.57],
+			[-80.66, 35.05]
+		]
+	},
+	"mp02": {
+		"type": "MultiPoint",
+		"coordinates": [
+			[-105.01, 39.57],
+			[-80.66, 35.05]
+		]
+	}
 }
