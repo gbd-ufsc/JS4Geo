@@ -198,22 +198,6 @@
   "type": "object",
 
   "anyOf": [{
-    "$ref": "#/definitions/point"
-  }, {
-    "$ref": "#/definitions/lineString"
-  }, {
-    "$ref": "#/definitions/polygon"
-  }, {
-    "$ref": "#/definitions/multiPoint"
-  }, {
-    "$ref": "#/definitions/multiLineString"
-  }, {
-    "$ref": "#/definitions/multiPolygon"
-  }, {
-    "$ref": "#/definitions/geometryCollection"
-  }, {
-    "$ref": "#/definitions/feature"
-  }, {
     "$ref": "#/definitions/featureCollection"
   }]
 }

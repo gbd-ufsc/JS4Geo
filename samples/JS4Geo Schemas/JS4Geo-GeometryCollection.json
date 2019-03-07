@@ -1,9 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://dominio.edu/JS4Geo.json",
-  "title": "JS4Geo schema for a Feature Collection.",
-  "description": "This document represents a JS4Geo schema for a collection of Features.",
-
+  "title": "JS4Geo schema for a collection of geometries.",
+  "description": "This document represents a JS4Geo schema for a collection of geometries, whose key to each document starts with a prefix for the geometry type: [p] Point; [ls] LineString; [pol_] Polygon; [mp] MultiPoint; [mls_] MultiLineString; [mPol] multiPolygon.",
 
   "definitions": {
     "directPosition": {
@@ -118,7 +117,6 @@
         "geometries": {
           "type": "array",
           "items": {
-
             "anyOf": [{
                 "$ref": "#/definitions/point"
               },
@@ -142,78 +140,12 @@
           }
         }
       }
-    },
-    "feature": {
-      "id": "#feature",
-      "required": ["type", "geometry", "properties"],
-      "properties": {
-        "type": {
-          "const": "Feature"
-        },
-        "geometry": {
-          "type": "object",
-          "anyOf": [{
-              "$ref": "#/definitions/point"
-            },
-            {
-              "$ref": "#/definitions/lineString"
-            },
-            {
-              "$ref": "#/definitions/polygon"
-            },
-            {
-              "$ref": "#/definitions/multiPoint"
-            },
-            {
-              "$ref": "#/definitions/multiLineString"
-            },
-            {
-              "$ref": "#/definitions/multiPolygon"
-            },
-            {
-              "$ref": "#/definitions/geometryCollection"
-            }
-          ]
-        },
-        "properties": {}
-      }
-    },
-    "featureCollection": {
-      "required": ["type", "features"],
-      "properties": {
-        "type": {
-          "const": "FeatureCollection"
-        },
-        "features": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/feature"
-          }
-        }
-      }
     }
-
   },
 
   "type": "object",
 
   "anyOf": [{
-    "$ref": "#/definitions/point"
-  }, {
-    "$ref": "#/definitions/lineString"
-  }, {
-    "$ref": "#/definitions/polygon"
-  }, {
-    "$ref": "#/definitions/multiPoint"
-  }, {
-    "$ref": "#/definitions/multiLineString"
-  }, {
-    "$ref": "#/definitions/multiPolygon"
-  }, {
     "$ref": "#/definitions/geometryCollection"
-  }, {
-    "$ref": "#/definitions/feature"
-  }, {
-    "$ref": "#/definitions/featureCollection"
   }]
 }

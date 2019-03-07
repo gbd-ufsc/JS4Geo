@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://dominio.edu/JS4Geo.json",
-  "title": "JS4Geo schema for a Feature Collection.",
-  "description": "This document represents a JS4Geo schema for a collection of Features.",
+  "title": "JS4Geo schema for a Feature.",
+  "description": "This document represents a JS4Geo schema for a Feature.",
 
 
   "definitions": {
@@ -177,43 +177,12 @@
         },
         "properties": {}
       }
-    },
-    "featureCollection": {
-      "required": ["type", "features"],
-      "properties": {
-        "type": {
-          "const": "FeatureCollection"
-        },
-        "features": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/feature"
-          }
-        }
-      }
     }
-
   },
 
   "type": "object",
 
   "anyOf": [{
-    "$ref": "#/definitions/point"
-  }, {
-    "$ref": "#/definitions/lineString"
-  }, {
-    "$ref": "#/definitions/polygon"
-  }, {
-    "$ref": "#/definitions/multiPoint"
-  }, {
-    "$ref": "#/definitions/multiLineString"
-  }, {
-    "$ref": "#/definitions/multiPolygon"
-  }, {
-    "$ref": "#/definitions/geometryCollection"
-  }, {
     "$ref": "#/definitions/feature"
-  }, {
-    "$ref": "#/definitions/featureCollection"
   }]
 }
