@@ -2,7 +2,7 @@
 JS4Geo - JSON Schema for Geographic Data
 
 
-O JS4GEO foi validado usando as seguintes ferramentas:
+The JS4GEO was validated using the following tools:
 https://jsonlint.com/
 https://www.jsonschemavalidator.net/
 
