@@ -1,0 +1,16 @@
+@prefix ex: <http://example.org/> .
+
+ex:sample08a a ex:JS_id ;
+  ex:companyName "John Co." ;
+  ex:street "Las Vegas Avenue" ;
+  ex:number 1 ;
+  ex:city "Las Vegas";
+  ex:cnpj "00.123.456.789/0001-01" .
+
+ex:sample08b a ex:JS_id ;
+  ex:name "John" ;
+  ex:street "Las Vegas Avenue" ;
+  ex:number 1 ;
+  ex:city "Las Vegas";
+  ex:cpf "123.456.789-01" .
+

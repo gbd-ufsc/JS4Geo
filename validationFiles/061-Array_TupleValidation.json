@@ -1,0 +1,3 @@
+{
+    "tupleValidationArray": [ 1, "two", {"name": "one","surname":"two"}, [3, 4, 5] ]
+}

@@ -1,0 +1,8 @@
+@prefix ex: <http://example.org/> .
+
+ex:sample04 a ex:JS_id ;
+  ex:name "John" ;
+  ex:age 40 ;
+  ex:street "Las Vegas Avenue" ;
+  ex:number 1 ;
+  ex:city "Las Vegas".

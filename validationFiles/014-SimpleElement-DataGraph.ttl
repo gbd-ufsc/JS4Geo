@@ -1,0 +1,4 @@
+@prefix ex: <http://www.example.org#> .
+
+ex:sample01 a ex:JS_id ;
+    ex:name "JSON to SHACL".

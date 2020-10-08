@@ -5,6 +5,14 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix sf:   <http://www.opengis.net/ont/sf#> .
 
+###############################################
+# Shapes file for validate JS4Geo data types
+# Version: 1.0.0
+# Date: 2020-10-08
+# Author: Frozza, Angelo Augusto
+# Contact: angelo.frozza@ifc.edu.br
+###############################################
+
 
 #Validation by via SHACL API
 
@@ -92,7 +100,7 @@ ex:polygonShape a sh:NodeShape ;
     sh:node ex:bboxShape ;
     ex:bboxMinSize 4 ;
     ex:bboxMaxSize 6 ;
-    sh:minCount 1 ;   # opcional, verificar quando existe
+    sh:minCount 1 ;   # optional! Comment if not required.
     sh:maxCount 1 ;
    ] .
 
@@ -132,7 +140,7 @@ ex:multiPointShape a sh:NodeShape ;
     sh:node ex:bboxShape ;
     ex:bboxMinSize 4 ;
     ex:bboxMaxSize 6 ;
-    sh:minCount 1 ;   # opcional, verificar quando existe
+    sh:minCount 1 ;   # optional! Comment if not required.
     sh:maxCount 1 ;
    ] .
 
@@ -163,7 +171,7 @@ ex:multiLineStringShape a sh:NodeShape;
     sh:node ex:bboxShape ;
     ex:bboxMinSize 4 ;
     ex:bboxMaxSize 6 ;
-    sh:minCount 1 ;   # opcional, verificar quando existe
+    sh:minCount 1 ;   # optional! Comment if not required.
     sh:maxCount 1 ;
    ] .
 
@@ -203,7 +211,7 @@ ex:multiPolygonShape a sh:NodeShape;
     sh:node ex:bboxShape ;
     ex:bboxMinSize 4 ;
     ex:bboxMaxSize 6 ;
-    sh:minCount 1 ;   # opcional, verificar quando existe
+    sh:minCount 1 ;   # optional! Comment if not required.
     sh:maxCount 1 ;
    ] .
 
@@ -226,16 +234,63 @@ ex:coordsInternalPolygonShape a sh:NodeShape ;
    ] .
 
 
+##########################################################
+##### TO VALIDADE JS4Geo GeometryCollection and Feature ##
+#####                                       datatype #####
+
+ex:geometryShape a sh:NodeShape ;
+   sh:or (
+      ex:pointShape 
+      ex:lineStringShape 
+      ex:polygonShape 
+      ex:multiPointShape 
+      ex:multiLineStringShape 
+      ex:multiPolygonShape 
+   ) .
+
 
 ##########################################################
 ##### TO VALIDADE JS4Geo GeometryCollection datatype #####
 
+ex:geometryCollectionShape a sh:NodeShape;
+  sh:targetClass sf:GeometryCollection;
+  sh:property [
+    sh:path ex:type;
+    sh:in ("GeometryCollection");
+    sh:minCount 1;
+    sh:maxCount 1 ;
+  ];
+  sh:property [
+    sh:path ex:geometries;
+    sh:node dash:ListShape;
+    sh:property [
+      sh:path ([sh:zeroOrMorePath rdf:rest] rdf:first);
+      sh:node ex:geometryShape;
+    ];
+    sh:minCount 1;
+    sh:maxCount 1 ;
+  ];
+  sh:property [
+    sh:path ex:bbox ;
+    sh:node ex:bboxShape ;
+    ex:bboxMinSize 4 ;
+    ex:bboxMaxSize 6 ;
+    sh:minCount 1 ;   # optional! Comment if not required.
+    sh:maxCount 1 ;
+   ] .
 
 
 ###############################################
 ##### TO VALIDADE JS4Geo Feature datatype #####
+##### ex:propertiesShape is defined in    #####
+##### the user shape                      #####
+
 ex:featureShape a sh:NodeShape;
-  sh:targetClass ex:feature;
+ sh:targetClass ex:feature;
+
+  sh:closed true ;
+  sh:ignoredProperties (rdf:type) ;
+
   sh:property [
     sh:path ex:type;
     sh:in ("Feature");
@@ -253,28 +308,46 @@ ex:featureShape a sh:NodeShape;
     sh:node ex:bboxShape ;
     ex:bboxMinSize 4 ;
     ex:bboxMaxSize 6 ;
-    sh:minCount 1 ;   # opcional, verificar quando existe
+    sh:minCount 1 ;   # optional! Comment if not required.
     sh:maxCount 1 ;
    ] ;
    sh:property [
      sh:path ex:properties ;
-     sh:node ex:propertiesShape ;
+     sh:node ex:propertiesShape ;  ### see header
      sh:minCount 1;
      sh:maxCount 1 ;
    ] .
    
-ex:geometryShape a sh:NodeShape ;
-   sh:or (
-      #ex:pointShape 
-      #ex:lineStringShape 
-      ex:polygonShape 
-      #ex:multiPointShape 
-      #ex:multiLineStringShape 
-      #ex:multiPolygonShape 
-   ) .
-
 #########################################################
 ##### TO VALIDADE JS4Geo FeatureCollection datatype #####
+
+ex:featureCollectionShape a sh:NodeShape;
+  sh:targetClass ex:featureCollection;
+  sh:property [
+    sh:path ex:type;
+    sh:in ("FeatureCollection");
+    sh:minCount 1;
+    sh:maxCount 1 ;
+  ];
+  sh:property [
+    sh:path ex:features;
+    sh:node dash:ListShape;
+    sh:property [
+      sh:path ([sh:zeroOrMorePath rdf:rest] rdf:first);
+      sh:node ex:featureShape;
+    ];
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ];
+  sh:property [
+    sh:path ex:bbox ;
+    sh:node ex:bboxShape ;
+    ex:bboxMinSize 4 ;
+    ex:bboxMaxSize 6 ;
+    sh:minCount 1 ;   # optional! Comment if not required.
+    sh:maxCount 1 ;
+   ] .
+
 
 
 ###########################################

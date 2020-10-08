@@ -1,0 +1,38 @@
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix ex:  <http://www.example.org#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sf:  <http://www.opengis.net/ont/sf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:myExample_01 a ex:JS_id ;
+  ex:myFeatureCollection  ex:featureCollection_1  .
+
+ex:featureCollection_1 a ex:featureCollection ;  
+  ex:type "FeatureCollection" ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) ;
+  ex:features ( ex:feature_1 ) .
+
+ex:feature_1 a ex:feature ;  
+  ex:type "Feature" ;
+  ex:geometry ex:point_1 ;
+  ex:properties ex:properties_1 ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) .
+
+ex:point_1 a sf:Point ;  
+  ex:type "Point" ; 
+  ex:coordinates ( 10.0 10.1 ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) . 
+
+ex:properties_1 a ex:properties ;
+   ex:name "Plaza Road Park" .
+
+
+
+################################################################
+## For test only
+ex:polygon_1 a sf:Polygon ;  
+  ex:type "Polygon" ;
+  ex:coordinates ( ( (100.0 0.0) (101.0 0.0) (101.0 1.0) (100.0 1.0) (100.0 0.0) )
+                   ( (100.8 0.8) (100.8 0.2) (100.2 0.2) (100.2 0.8) (100.8 0.8) ) ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) .
+

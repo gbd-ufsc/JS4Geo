@@ -1,0 +1,50 @@
+@prefix ex:   <http://example.org/> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:JS_id a sh:NodeShape;
+  sh:targetClass ex:JS_id;
+   
+  sh:closed true ;
+  sh:ignoredProperties (rdf:type) ;
+
+  sh:property [
+	sh:path ex:tupleValidationArray;
+	sh:node dash:ListShape;
+	sh:property [
+		sh:path rdf:first;
+		sh:datatype xsd:integer;
+	];
+	sh:property [
+		sh:path (rdf:rest rdf:first);
+		sh:datatype xsd:string;
+	];
+	sh:property [
+		sh:path (rdf:rest rdf:rest rdf:first);
+		sh:node ex:elem_3_Shape;
+	];
+	sh:property [
+		sh:path (rdf:rest rdf:rest rdf:rest rdf:first);
+		sh:node ex:elem_4_Shape;
+	];
+].
+
+ex:elem_3_Shape a sh:NodeShape;
+	sh:targetClass ex:elem_3;
+	sh:property [
+		sh:path ex:name ;
+		sh:datatype xsd:string;
+	];
+	sh:property [
+		sh:path ex:surname ;
+		sh:datatype xsd:string;
+	].
+
+ex:elem_4_Shape a sh:NodeShape;
+	sh:node dash:ListShape;
+	sh:property [
+		sh:path ([sh:zeroOrMorePath rdf:rest] rdf:first);
+		sh:datatype xsd:integer;
+	].

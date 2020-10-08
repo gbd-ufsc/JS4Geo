@@ -1,0 +1,8 @@
+@prefix ex: <http://example.org/> .
+
+ex:sample04 a ex:JS_id ;
+  ex:nmProp ex:nmPropData .
+
+ex:nmPropData a ex:nmProp ;
+   ex:nmPropA "JSON to SHACL" ;
+   ex:nmPropB 10 .

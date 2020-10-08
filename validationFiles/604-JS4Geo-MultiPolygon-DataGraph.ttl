@@ -1,0 +1,29 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:  <http://www.example.org#> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix sf:  <http://www.opengis.net/ont/sf#> .
+
+
+ex:MyExample_01  a ex:JS_id ;
+  ex:myMultiPolygon  ex:multiPolygon_1  .
+
+ex:multiPolygon_1 a sf:MultiPolygon ;  
+  ex:type "MultiPolygon" ;
+  ex:coordinates (  ( ( (102.0 2.0) (103.0 2.0) (103.0 3.0) (103.0 2.0) (102.0 2.0) ) )
+                    ( ( (100.0 0.0) (101.0 0.0) (101.0 1.0) (100.0 1.0) (100.0 0.0) )
+                      ( (100.2 0.2) (100.2 0.8) (100.8 0.8) (100.8 0.2) (100.2 0.2) ) )
+   ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) .
+
+
+ex:MyExample_02  a ex:JS_id ;
+  ex:myMultiPolygon  ex:multiPolygon_2  .
+
+ex:multiPolygon_2 a sf:MultiPolygon ;  
+  ex:type "MultiPolygon" ;
+  ex:coordinates (  ( ( (102.0 2.0) (103.0 2.0) (103.0 3.0) (103.0 2.0) (102.0 2.0) ) )
+                    ( ( (100.0 0.0) (101.0 0.0) (101.0 1.0) (100.0 1.0) (100.0 0.0) )
+                      ( (100.2 0.2) (100.2 0.8) (100.8 0.8) (100.8 0.2) (100.2 0.2) ) )
+   ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) .

@@ -1,0 +1,3 @@
+@prefix ex: <http://example.org/> .
+
+ex:sample01 a ex:JS_id .

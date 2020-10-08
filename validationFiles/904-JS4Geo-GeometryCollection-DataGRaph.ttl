@@ -1,0 +1,50 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:  <http://www.example.org#> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix sf:  <http://www.opengis.net/ont/sf#> .
+
+
+ex:MyExample_01  a ex:JS_id ;
+  ex:myGeometryCollection  ex:geometryCollection_1 .
+
+ex:geometryCollection_1 a sf:GeometryCollection ;  
+  ex:type "GeometryCollection" ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) ;
+  ex:geometries ( ex:point_1 ex:lineString_1 ex:polygon_1 ex:multiPoint_1 ex:multiLineString_1 ex:multiPolygon_1 ) .
+
+
+ex:point_1 a sf:Point ;  
+  ex:type "Point" ; 
+  ex:coordinates ( 10.0 10.1 ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) . 
+   
+ex:lineString_1 a sf:LineString ;  
+  ex:type "LineString" ;
+  ex:coordinates ( ( -48.41  -27.38 ) ( -48.57 -27.83 ) ) ;
+  ex:bbox (10.1 11.1 12.1 13.1 14.1 15.1 ) . 
+
+ex:polygon_1 a sf:Polygon ;  
+  ex:type "Polygon" ;
+  ex:coordinates ( ( (100.0 0.0) (101.0 0.0) (101.0 1.0) (100.0 1.0) (100.0 0.0) )
+                   ( (100.8 0.8) (100.8 0.2) (100.2 0.2) (100.2 0.8) (100.8 0.8) ) ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) .
+
+ex:multiPoint_1 a sf:MultiPoint ;  
+  ex:type "MultiPoint" ;
+  ex:coordinates ( ( -105.01 39.57 ) ( -80.66 35.05) ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) .
+
+ex:multiLineString_1 a sf:MultiLineString ;  
+  ex:type "MultiLineString" ;
+  ex:coordinates ( ( (170.0 45.0) (180.0 45.0) )
+             ( (-180.0 45.0) (-170.0 45.0) ) ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) .
+
+ex:multiPolygon_1 a sf:MultiPolygon ;  
+  ex:type "MultiPolygon" ;
+  ex:coordinates (  ( ( (102.0 2.0) (103.0 2.0) (103.0 3.0) (103.0 2.0) (102.0 2.0) ) )
+                    ( ( (100.0 0.0) (101.0 0.0) (101.0 1.0) (100.0 1.0) (100.0 0.0) )
+                      ( (100.2 0.2) (100.2 0.8) (100.8 0.8) (100.8 0.2) (100.2 0.2) ) )
+   ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) .

@@ -1,0 +1,5 @@
+@prefix ex: <http://example.org/> .
+
+ex:sample01 a ex:JS_id ;
+   ex:listValidationArray ( 12 13 14) .
+

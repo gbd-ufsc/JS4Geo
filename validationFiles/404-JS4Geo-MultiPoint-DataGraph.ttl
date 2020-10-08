@@ -1,0 +1,23 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:  <http://www.example.org#> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix sf:  <http://www.opengis.net/ont/sf#> .
+
+
+ex:MyExample_01  a ex:JS_id ;
+  ex:myMultiPoint  ex:multiPoint_1  .
+
+ex:multiPoint_1 a sf:MultiPoint ;  
+  ex:type "MultiPoint" ;
+  ex:coordinates ( ( -105.01 39.57 ) ( -80.66 35.05) ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) .
+
+
+ex:MyExample_02  a ex:JS_id ;
+  ex:myMultiPoint  ex:multiPoint_2  .
+
+ex:multiPoint_2 a sf:MultiPoint ;  
+  ex:type "MultiPoint" ;
+  ex:coordinates ( ( -105.01 39.57 ) ( -80.66 35.05) ) ;
+  ex:bbox ( 10.1 11.1 12.1 13.1 14.1 15.1 ) .

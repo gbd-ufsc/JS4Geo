@@ -1,0 +1,10 @@
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ex:sample01 a ex:JS_id ;
+    ex:tupleValidationArray( 1 "two" ex:elemThree  ( 1 2 3 )  ) .
+
+ex:elemThree a ex:elem_3;
+   ex:name "one";
+   ex:surname "two" .
+
