@@ -1,0 +1,93 @@
+{
+    "neighbourhoods": {
+        "type": "FeatureCollection",
+        "features": [{
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [100.0, 0.0],
+                        [101.0, 0.0],
+                        [101.0, 1.0],
+                        [100.0, 1.0],
+                        [100.0, 0.0]
+                    ]
+                ]
+            },
+            "properties": {
+                "prop0": "value0",
+                "prop1": {
+                    "this": "that"
+                }
+            }
+        }]
+    },
+    "streets": {
+        "type": "FeatureCollection",
+        "features": [{
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-48.41, -27.38],
+                    [-48.57, -27.83]
+                ]
+            },
+            "properties": {
+                "prop0": "value0",
+                "prop1": {
+                    "this": "that"
+                }
+            }
+        }]
+    },
+    "policeStations": {
+        "type": "FeatureCollection",
+        "features": [{
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-48.50, -27.50]
+            },
+            "properties": {
+                "prop0": "value0",
+                "prop1": {
+                    "this": "that"
+                }
+            }
+        }]
+    },
+    "schools": {
+        "type": "FeatureCollection",
+        "features": [{
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-48.50, -27.50]
+            },
+            "properties": {
+                "prop0": "value0",
+                "prop1": {
+                    "this": "that"
+                }
+            }
+        }]
+    },
+    "healthServices": {
+        "type": "FeatureCollection",
+        "features": [{
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-48.50, -27.50]
+            },
+            "properties": {
+                "prop0": "value0",
+                "prop1": {
+                    "this": "that"
+                }
+            }
+        }]
+    }
+}
